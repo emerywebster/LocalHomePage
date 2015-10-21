@@ -75,8 +75,8 @@
 					// Display an icon with a link to the admin area
 					$adminurl = '';
 					// We'll start by checking if the site looks like it's a WordPress site
-					if ( is_dir( $file . '/wp-admin' ) )
-						$adminurl = sprintf( 'http://%1$s/wp-admin', $siteroot );
+					if ( is_dir( $file . '/wp-admin' ) || is_dir( $file . '/wp/wp-admin' ))
+						$adminurl = sprintf( '%1$s/wp-admin', $siteroot );
 
 					// If the user has defined an adminurl for the project we'll use that instead
 		            if (isset($siteoptions[$project]) &&  is_array( $siteoptions[$project] ) && array_key_exists( 'adminurl', $siteoptions[$project] ) )
@@ -84,7 +84,7 @@
 
 		            // If there's an admin url then we'll show it - the icon will depend on whether it looks like WP or not
 		            if ( ! empty( $adminurl ) )
-			            printf( '<a class="%2$s icon" href="%1$s">Admin</a>', $adminurl, is_dir( $file . '/wp-admin' ) ? 'wp' : 'admin' );
+			            printf( '<a class="%2$s icon" href="%1$s">Admin</a>', $adminurl, is_dir( $file . '/wp-admin' ) || is_dir( $file . '/wp/wp-admin' ) ? 'wp' : 'admin' );
 
 
 		            echo '</li>';
