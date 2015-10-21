@@ -89,6 +89,9 @@
 		            if ( ! empty( $adminurl ) )
 			            printf( '<a class="%2$s icon" href="%1$s">Admin</a>', $adminurl, is_dir( $file . '/wp-admin' ) || is_dir( $file . '/wp/wp-admin' ) ? 'wp' : 'admin' );
 
+			        // Github icon
+			        if ( is_dir( $file . '/_drafts' ) )
+			        	printf( '<a class="%2$s icon" href="http://localhost:4000">Github</a>', $siteroot, is_dir( $file . '/' ) ? 'github' : '' );
 
 		            echo '</li>';
 
