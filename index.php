@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Local</title>
+        <title>Home.dev</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -55,10 +55,13 @@
 
 		            	if ( file_exists( $file . '/' . $icon ) ) {
 		            		$icon_output = sprintf( '<img src="%1$s/%2$s">', $siteroot, $icon );
-		            		break;
-		            	} // if ( file_exists( $file . '/' . $icon ) )
+		            	}
 
-		            } // foreach( $icons as $icon )
+		            	else if ( file_exists( $file . '/assets/img/' . $icon ) ) {
+		            		$icon_output = sprintf( '<img src="%1$s/assets/img/%2$s">', $siteroot, $icon );
+		            	}
+
+		            }
 		            echo $icon_output;
 
 		            // Display a link to the site
