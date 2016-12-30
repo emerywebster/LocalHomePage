@@ -7,7 +7,7 @@ This is a small and simple local home page that automatically lists, and provide
 
 ---
 
-In /private/etc/apache2/httpd.conf:
+In /private/etc/apache2/extra/httpd-vhosts.conf:
 
 ```
 <Directory "/Users/user/Sites">
@@ -25,7 +25,7 @@ In /private/etc/apache2/httpd.conf:
 
 <Virtualhost *:80>
   VirtualDocumentRoot "/Users/user/Sites/%1/"
-  ServerName sites.dev
+  ServerName %1.dev
   ServerAlias *.dev
   UseCanonicalName Off
 </Virtualhost>
